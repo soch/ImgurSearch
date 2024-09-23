@@ -27,7 +27,7 @@ struct ContentView: View {
                     // Cancel the previous search task if it exists
                     searchTask?.cancel()
                     searchTask = Task {
-                        await viewModel.performSearch()
+                        await viewModel.debounceSearch()
                     }
                 }
                 
