@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct SortMenu: View {
-    @ObservedObject var viewModel: ImageSearchViewModel
+    @EnvironmentObject var viewModel: ImageSearchViewModel
     
     var body: some View {
         Menu {
             ForEach(SortOption.allCases) { option in
                 Button(action: {
                     viewModel.selectedSortOption = option
-                    if option == .top {
-                        viewModel.selectedDateRange = .allTime // Automatically set to All Time when Top is selected
-                    }
                     Task {
                         await viewModel.performSearch()
                     }
@@ -36,4 +33,3 @@ struct SortMenu: View {
         }
     }
 }
-

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DateRangeMenu: View {
-    @ObservedObject var viewModel: ImageSearchViewModel
-    
+    @EnvironmentObject var viewModel: ImageSearchViewModel
+
     var body: some View {
         Menu {
             ForEach(DateRange.allCases) { range in
@@ -31,7 +31,5 @@ struct DateRangeMenu: View {
         } label: {
             Label("Date Range", systemImage: "calendar")
         }
-        .disabled(viewModel.selectedSortOption == .top)
     }
 }
-

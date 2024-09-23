@@ -8,13 +8,14 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func searchImages(query: String, sortOption: String, dateRange: String, page: Int, clientID: String) async throws -> [ImgurImage]
+    func searchImages(query: String, sortOption: String, dateRange: String, page: Int) async throws -> [ImgurImage]
 }
 
 class NetworkService: NetworkServiceProtocol {
     private let baseApiUrl = "https://api.imgur.com/3/gallery/search/"
+    private let clientID = "Client-ID b067d5cb828ec5a"
     
-    func searchImages(query: String, sortOption: String, dateRange: String, page: Int, clientID: String) async throws -> [ImgurImage] {
+    func searchImages(query: String, sortOption: String, dateRange: String, page: Int) async throws -> [ImgurImage] {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let apiUrl: String
         

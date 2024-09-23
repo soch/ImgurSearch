@@ -6,18 +6,13 @@ class ImageSearchViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var currentPage = 0
     @Published var hasMoreImages = true
-    @Published var selectedImageURL: String?
+    @Published var selectedImageURL: IdentifiableImageURL?
 
     @Published var selectedSortOption: SortOption = .viral
     @Published var selectedDateRange: DateRange = .allTime
     
-    private let networkService: NetworkServiceProtocol
-    private let clientID: String
+    private let networkService: NetworkServiceProtocol = NetworkService()
 
-    init(networkService: NetworkServiceProtocol, clientID: String = "Client-ID b067d5cb828ec5a") {
-        self.networkService = networkService
-        self.clientID = clientID
-    }
 
     func performSearch() async {
         currentPage = 0
@@ -43,8 +38,7 @@ class ImageSearchViewModel: ObservableObject {
                 query: searchTerm,
                 sortOption: selectedSortOption.rawValue,
                 dateRange: selectedDateRange.rawValue,
-                page: currentPage,
-                clientID: clientID
+                page: currentPage
             )
             DispatchQueue.main.async {
                 self.images = fetchedImages
