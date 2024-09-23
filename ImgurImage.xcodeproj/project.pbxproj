@@ -81,9 +81,9 @@
 		D291D18A2CA13C9600C93AFC /* Result Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2F21FDC2CA1286D00FD6AE8 /* ImageGridView.swift */,
 				D2F21FE02CA128A000FD6AE8 /* LoadingView.swift */,
 				D2F21FDE2CA1288700FD6AE8 /* NoResultsView.swift */,
-				D2F21FDC2CA1286D00FD6AE8 /* ImageGridView.swift */,
 			);
 			path = "Result Views";
 			sourceTree = "<group>";
@@ -116,11 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */,
+				D2F21FD72CA127B400FD6AE8 /* Model */,
+				D2F21FD82CA1280700FD6AE8 /* View */,
+				D2F21FD92CA1280F00FD6AE8 /* ViewModel */,
 				D2F21FEB2CA12E7F00FD6AE8 /* Common */,
 				D2F21FE62CA1293900FD6AE8 /* Network Layer */,
-				D2F21FD92CA1280F00FD6AE8 /* ViewModel */,
-				D2F21FD82CA1280700FD6AE8 /* View */,
-				D2F21FD72CA127B400FD6AE8 /* Model */,
 				D2F21FD22C9A7A6600FD6AE8 /* Info.plist */,
 				D2F21FC42C9A6CBC00FD6AE8 /* Assets.xcassets */,
 				D2F21FC62C9A6CBC00FD6AE8 /* ImgurImage.entitlements */,
