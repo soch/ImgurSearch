@@ -10,6 +10,7 @@
 		D21AE2022CA1315500884D95 /* SortMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AE2012CA1315500884D95 /* SortMenu.swift */; };
 		D21AE2042CA1317A00884D95 /* DateRangeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AE2032CA1317A00884D95 /* DateRangeMenu.swift */; };
 		D2592D062CA1457E001811DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D052CA1457E001811DC /* MenuView.swift */; };
+		D2592D082CA156DB001811DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D072CA156DB001811DC /* AppConstants.swift */; };
 		D2F21FC12C9A6CBA00FD6AE8 /* ImgurImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */; };
 		D2F21FC32C9A6CBA00FD6AE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */; };
 		D2F21FC52C9A6CBC00FD6AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F21FC42C9A6CBC00FD6AE8 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		D21AE2012CA1315500884D95 /* SortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenu.swift; sourceTree = "<group>"; };
 		D21AE2032CA1317A00884D95 /* DateRangeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeMenu.swift; sourceTree = "<group>"; };
 		D2592D052CA1457E001811DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D2592D072CA156DB001811DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D2F21FBD2C9A6CBA00FD6AE8 /* ImgurImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurImageApp.swift; sourceTree = "<group>"; };
 		D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D2F21FEC2CA12E8B00FD6AE8 /* SortOption.swift */,
+				D2592D072CA156DB001811DC /* AppConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				D2F21FDF2CA1288700FD6AE8 /* NoResultsView.swift in Sources */,
 				D2F21FE52CA128FD00FD6AE8 /* ImageSearchViewModel.swift in Sources */,
 				D2F21FDD2CA1286D00FD6AE8 /* ImageGridView.swift in Sources */,
+				D2592D082CA156DB001811DC /* AppConstants.swift in Sources */,
 				D2F21FED2CA12E8B00FD6AE8 /* SortOption.swift in Sources */,
 				D2F21FDB2CA1285300FD6AE8 /* SearchBarView.swift in Sources */,
 				D21AE2042CA1317A00884D95 /* DateRangeMenu.swift in Sources */,

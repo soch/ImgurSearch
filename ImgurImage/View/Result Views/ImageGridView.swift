@@ -41,8 +41,9 @@ struct ImageGridView: View {
     }
 
     private func loadMoreImages() {
-        guard !viewModel.isLoading else { return }
+        guard !viewModel.isLoading  && viewModel.hasMoreImages else { return }
         viewModel.currentPage += 1
+        print ("Setting current page = \(viewModel.currentPage)")
         Task {
             await viewModel.searchImages()
         }

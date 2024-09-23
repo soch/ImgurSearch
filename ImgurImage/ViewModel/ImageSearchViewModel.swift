@@ -43,8 +43,25 @@ class ImageSearchViewModel: ObservableObject {
                 dateRange: selectedDateRange.rawValue,
                 page: currentPage
             )
+            // Filter out duplicates before updating the images array
+            let existingImageIds = Set(images.map { $0.id })
+            let newImages = fetchedImages.filter { !existingImageIds.contains($0.id) }
+            
             DispatchQueue.main.async { [weak self] in
-                self?.images = fetchedImages
+                if newImages.isEmpty {
+                    self?.hasMoreImages = false
+#if DEBUG
+                    print("No more images available.")
+#endif
+                } else {
+                    self?.hasMoreImages = (newImages.count >= AppConstants.paginationLimit)
+                    self?.images.append(contentsOf: newImages)
+#if DEBUG
+                    if let hasImages = self?.hasMoreImages {
+                        print("Loaded \(newImages.count) new images. Set hasMoreImages to \(String(describing: hasImages))")
+                    }
+#endif
+                }
                 self?.isLoading = false
             }
         } catch {

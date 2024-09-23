@@ -12,17 +12,15 @@ protocol NetworkServiceProtocol {
 }
 
 class NetworkService: NetworkServiceProtocol {
-    private let baseApiUrl = "https://api.imgur.com/3/gallery/search/"
-    private let clientID = "Client-ID b067d5cb828ec5a"
     
     func searchImages(query: String, sortOption: String, dateRange: String, page: Int) async throws -> [ImgurImage] {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let apiUrl: String
         
         if sortOption == "top" {
-            apiUrl = "\(baseApiUrl)\(sortOption)/\(page)?q=\(encodedQuery)&mature=false"
+            apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(page)?q=\(encodedQuery)&mature=false"
         } else {
-            apiUrl = "\(baseApiUrl)\(sortOption)/\(dateRange)/\(page)?q=\(encodedQuery)&mature=false"
+            apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(dateRange)/\(page)?q=\(encodedQuery)&mature=false"
         }
         
         guard let url = URL(string: apiUrl) else {
@@ -31,25 +29,25 @@ class NetworkService: NetworkServiceProtocol {
         }
         
         var request = URLRequest(url: url)
-        request.addValue(clientID, forHTTPHeaderField: "Authorization")
+        request.addValue(AppConstants.clientID, forHTTPHeaderField: "Authorization")
         
-        // Debugging: Print Request Information
-        print("🌐 Sending Request:")
-        print("URL: \(url)")
-        print("Headers: \(request.allHTTPHeaderFields ?? [:])")
+        
+//        print("🌐 Sending Request:")
+//        print("URL: \(url)")
+//        print("Headers: \(request.allHTTPHeaderFields ?? [:])")
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             
-            // Debugging: Print Response Information
-            if let httpResponse = response as? HTTPURLResponse {
-                print("✅ Response Status Code: \(httpResponse.statusCode)")
-            }
+//            #if DEBUG
+//            if let httpResponse = response as? HTTPURLResponse {
+//                print("✅ Response Status Code: \(httpResponse.statusCode)")
+//            }
+//            #endif
             
             let responseObject = try JSONDecoder().decode(ImgurSearchResponse.self, from: data)
             
-            // Debugging: Print Decoded Response Info
-            print("✅ Successfully decoded response with \(responseObject.data.count) items")
+            //print("✅ Successfully decoded response with \(responseObject.data.count) items")
             
             return responseObject.data.compactMap { item in
                 if let images = item.images {
@@ -61,7 +59,6 @@ class NetworkService: NetworkServiceProtocol {
             }.flatMap { $0 }
             
         } catch {
-            // Debugging: Print Error Details
             print("❌ Networking Error: \(error.localizedDescription)")
             throw error
         }
