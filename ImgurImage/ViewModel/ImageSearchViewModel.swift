@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 class ImageSearchViewModel: ObservableObject {
     @Published var images: [ImgurImage] = []
     @Published var searchTerm: String = "Star Trek"
@@ -15,9 +16,11 @@ class ImageSearchViewModel: ObservableObject {
 
 
     func performSearch() async {
-        currentPage = 0
-        hasMoreImages = true
-        images = []
+        DispatchQueue.main.async { [weak self] in
+            self?.currentPage = 0
+            self?.hasMoreImages = true
+            self?.images = []
+        }
         await searchImages()
     }
     
@@ -40,13 +43,13 @@ class ImageSearchViewModel: ObservableObject {
                 dateRange: selectedDateRange.rawValue,
                 page: currentPage
             )
-            DispatchQueue.main.async {
-                self.images = fetchedImages
-                self.isLoading = false
+            DispatchQueue.main.async { [weak self] in
+                self?.images = fetchedImages
+                self?.isLoading = false
             }
         } catch {
-            DispatchQueue.main.async {
-                self.isLoading = false
+            DispatchQueue.main.async { [weak self] in
+                self?.isLoading = false
                 print("Error fetching images: \(error)")
             }
         }
