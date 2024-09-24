@@ -18,9 +18,10 @@ class NetworkService: NetworkServiceProtocol {
         let apiUrl: String
         
         if sortOption == "top" {
-            apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(page)?q=\(encodedQuery)&mature=false"
-        } else {
             apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(dateRange)/\(page)?q=\(encodedQuery)&mature=false"
+            
+        } else {
+            apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(page)?q=\(encodedQuery)&mature=false"
         }
         
         guard let url = URL(string: apiUrl) else {
@@ -32,8 +33,8 @@ class NetworkService: NetworkServiceProtocol {
         request.addValue(AppConstants.clientID, forHTTPHeaderField: "Authorization")
         
         
-//        print("🌐 Sending Request:")
-//        print("URL: \(url)")
+        print("🌐 Sending Request:")
+        print("URL: \(url)")
 //        print("Headers: \(request.allHTTPHeaderFields ?? [:])")
         
         do {

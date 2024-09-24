@@ -9,7 +9,7 @@ class ImageSearchViewModel: ObservableObject {
     @Published var hasMoreImages = true
     @Published var selectedImageURL: IdentifiableImageURL?
 
-    @Published var selectedSortOption: SortOption = .viral
+    @Published var selectedSortOption: SortOption = .time
     @Published var selectedDateRange: DateRange = .allTime
     
     private let networkService: NetworkServiceProtocol = NetworkService()
@@ -70,5 +70,13 @@ class ImageSearchViewModel: ObservableObject {
                 print("Error fetching images: \(error)")
             }
         }
+    }
+    
+    func setSortOption(option: SortOption) {
+        selectedSortOption = option
+    }
+    
+    func setDateOption(range: DateRange) {
+        selectedDateRange = range
     }
 }
