@@ -8,13 +8,10 @@ class ImageSearchViewModel: ObservableObject {
     @Published var currentPage = 0
     @Published var hasMoreImages = true
     @Published var selectedImageURL: IdentifiableImageURL?
-
     @Published var selectedSortOption: SortOption = .time
     @Published var selectedDateRange: DateRange = .allTime
-    
     private let networkService: NetworkServiceProtocol = NetworkService()
-
-
+    
     func performSearch() async {
         DispatchQueue.main.async { [weak self] in
             self?.currentPage = 0
@@ -31,7 +28,7 @@ class ImageSearchViewModel: ObservableObject {
             await performSearch()
         }
     }
-
+    
     func searchImages() async {
         isLoading = true
         do {
@@ -45,6 +42,7 @@ class ImageSearchViewModel: ObservableObject {
             let existingImageIds = Set(images.map { $0.id })
             let newImages = fetchedImages.filter { !existingImageIds.contains($0.id) }
             
+            // update published vars on main
             DispatchQueue.main.async { [weak self] in
                 if newImages.isEmpty {
                     self?.hasMoreImages = false

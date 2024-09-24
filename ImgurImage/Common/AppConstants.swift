@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct AppConstants {
     static let baseApiUrl = "https://api.imgur.com/3/gallery/search/"
     static let clientID = "Client-ID b067d5cb828ec5a"

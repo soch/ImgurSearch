@@ -11,9 +11,7 @@ enum SortOption: String, CaseIterable, Identifiable {
     case viral = "viral"
     case top = "top"
     case time = "time"
-    
     var id: String { self.rawValue }
-    
     var displayName: String {
         switch self {
         case .viral: return "Viral"
@@ -28,9 +26,7 @@ enum DateRange: String, CaseIterable, Identifiable {
     case week = "week"
     case month = "month"
     case year = "year"
-    
     var id: String { self.rawValue }
-    
     var displayName: String {
         switch self {
         case .allTime: return "All Time"

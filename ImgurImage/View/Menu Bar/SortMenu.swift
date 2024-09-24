@@ -5,7 +5,7 @@ struct SortMenu: View {
     
     var body: some View {
         Menu {
-            Picker("Sort by", selection: $viewModel.selectedSortOption) {
+            Picker("Sort by", selection: $viewModel.selectedSortOption) { // add a checkmark
                 ForEach(SortOption.allCases, id: \.self) { option in
                     Text(option.displayName).tag(option)
                 }

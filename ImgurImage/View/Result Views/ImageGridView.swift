@@ -3,7 +3,7 @@ import Kingfisher
 
 struct ImageGridView: View {
     @EnvironmentObject var  viewModel: ImageSearchViewModel
-
+    
     var body: some View {
         Group {
             if viewModel.isLoading && viewModel.images.isEmpty {
@@ -31,7 +31,6 @@ struct ImageGridView: View {
                             }
                         }
                     }
-
                     if viewModel.isLoading {
                         ProgressView("Loading more images...")
                     }
@@ -39,7 +38,7 @@ struct ImageGridView: View {
             }
         }
     }
-
+    
     private func loadMoreImages() {
         guard !viewModel.isLoading  && viewModel.hasMoreImages else { return }
         viewModel.currentPage += 1

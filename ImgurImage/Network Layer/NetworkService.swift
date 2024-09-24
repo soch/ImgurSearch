@@ -15,8 +15,7 @@ class NetworkService: NetworkServiceProtocol {
     
     func searchImages(query: String, sortOption: String, dateRange: String, page: Int) async throws -> [ImgurImage] {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let apiUrl: String
-        
+        var apiUrl: String
         if sortOption == "top" {
             apiUrl = "\(AppConstants.baseApiUrl)\(sortOption)/\(dateRange)/\(page)?q=\(encodedQuery)&mature=false"
             
@@ -38,16 +37,14 @@ class NetworkService: NetworkServiceProtocol {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            
-//            #if DEBUG
-//            if let httpResponse = response as? HTTPURLResponse {
-//                print("✅ Response Status Code: \(httpResponse.statusCode)")
-//            }
-//            if let jsonString = String(data: data, encoding: .utf8) {
-//                print("🌐 Raw Response: \(jsonString)")
-//            }
-//            #endif
-            
+            //            #if DEBUG
+            //            if let httpResponse = response as? HTTPURLResponse {
+            //                print("✅ Response Status Code: \(httpResponse.statusCode)")
+            //            }
+            //            if let jsonString = String(data: data, encoding: .utf8) {
+            //                print("🌐 Raw Response: \(jsonString)")
+            //            }
+            //            #endif
             let responseObject = try JSONDecoder().decode(ImgurSearchResponse.self, from: data)
             return responseObject.data.compactMap { item in
                 if let images = item.images {

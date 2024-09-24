@@ -8,7 +8,7 @@ import SwiftUI
 
 struct MenuView: View {
     @EnvironmentObject var viewModel: ImageSearchViewModel
-
+    
     var body: some View {
         HStack {
             SortMenu()

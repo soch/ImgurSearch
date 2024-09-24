@@ -4,16 +4,15 @@ import Kingfisher
 struct ContentView: View {
     @EnvironmentObject var viewModel: ImageSearchViewModel
     
-
     init() {
-        UITextField.appearance().clearButtonMode = .whileEditing
+        UITextField.appearance().clearButtonMode = .whileEditing // show x button
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView()
-                ImageGridView()
+                SearchBarView() // search input
+                ImageGridView() // shows images
             }
             .padding()
             .onAppear {
@@ -22,10 +21,10 @@ struct ContentView: View {
                 }
             }
             .sheet(item: $viewModel.selectedImageURL) { identifiableImage in
-                            FullImageView(imageUrl: identifiableImage.url)
-                        }
+                FullImageView(imageUrl: identifiableImage.url)
+            }
             .navigationTitle("Imgur Search")
-            .navigationBarItems(trailing: MenuView())
+            .navigationBarItems(trailing: MenuView()) // show sort & filter menus
         }
     }
 }

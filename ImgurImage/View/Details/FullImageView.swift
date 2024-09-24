@@ -10,7 +10,7 @@ import Kingfisher
 
 struct FullImageView: View {
     var imageUrl: String
-
+    
     var body: some View {
         if let url = URL(string: imageUrl) {
             KFImage(url)
