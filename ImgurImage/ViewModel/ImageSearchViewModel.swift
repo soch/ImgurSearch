@@ -26,10 +26,7 @@ class ImageSearchViewModel: ObservableObject {
     }
     
     func debounceSearch() async {
-        // Delay the search operation by 0.5 seconds
         try? await Task.sleep(nanoseconds: 500_000_000)
-        
-        // Perform the search if the task has not been cancelled
         if !Task.isCancelled {
             await performSearch()
         }
@@ -44,7 +41,7 @@ class ImageSearchViewModel: ObservableObject {
                 dateRange: selectedDateRange.rawValue,
                 page: currentPage
             )
-            // Filter out duplicates before updating the images array
+            // Filter out duplicates
             let existingImageIds = Set(images.map { $0.id })
             let newImages = fetchedImages.filter { !existingImageIds.contains($0.id) }
             

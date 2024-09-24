@@ -11,15 +11,12 @@ struct SearchBarView: View {
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
         .onChange(of: viewModel.searchTerm) { _, _ in
-            // Cancel the previous search task if it exists
             searchTask?.cancel()
-            // Start a new search task
             performSearch()
         }
     }
 
     private func performSearch() {
-        // Start a new debounced search task
         searchTask = Task {
             await viewModel.debounceSearch()
         }

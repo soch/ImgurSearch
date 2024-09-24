@@ -35,7 +35,6 @@ class NetworkService: NetworkServiceProtocol {
         
         print("🌐 Sending Request:")
         print("URL: \(url)")
-//        print("Headers: \(request.allHTTPHeaderFields ?? [:])")
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -50,9 +49,6 @@ class NetworkService: NetworkServiceProtocol {
 //            #endif
             
             let responseObject = try JSONDecoder().decode(ImgurSearchResponse.self, from: data)
-            
-            //print("✅ Successfully decoded response with \(responseObject.data.count) items")
-            
             return responseObject.data.compactMap { item in
                 if let images = item.images {
                     return images.filter { $0.type?.hasPrefix("image/") == true }
