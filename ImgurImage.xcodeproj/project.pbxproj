@@ -12,6 +12,8 @@
 		D2592D062CA1457E001811DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D052CA1457E001811DC /* MenuView.swift */; };
 		D2592D082CA156DB001811DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D072CA156DB001811DC /* AppConstants.swift */; };
 		D286DACC2CA28C9B0021DB1C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D286DACB2CA28C9B0021DB1C /* README.md */; };
+		D286DACE2CA2931C0021DB1C /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = D286DACD2CA2931C0021DB1C /* search.png */; };
+		D286DAD02CA2943F0021DB1C /* ImgurSearchLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D286DACF2CA2943E0021DB1C /* ImgurSearchLaunchScreen.storyboard */; };
 		D2F21FC12C9A6CBA00FD6AE8 /* ImgurImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */; };
 		D2F21FC32C9A6CBA00FD6AE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */; };
 		D2F21FC52C9A6CBC00FD6AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F21FC42C9A6CBC00FD6AE8 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		D2592D052CA1457E001811DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D2592D072CA156DB001811DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D286DACB2CA28C9B0021DB1C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D286DACD2CA2931C0021DB1C /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Assets.xcassets/AppIcon.appiconset/search.png; sourceTree = "<group>"; };
+		D286DACF2CA2943E0021DB1C /* ImgurSearchLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImgurSearchLaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2F21FBD2C9A6CBA00FD6AE8 /* ImgurImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurImageApp.swift; sourceTree = "<group>"; };
 		D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		D2F21FB42C9A6CBA00FD6AE8 = {
 			isa = PBXGroup;
 			children = (
+				D286DACF2CA2943E0021DB1C /* ImgurSearchLaunchScreen.storyboard */,
 				D286DACB2CA28C9B0021DB1C /* README.md */,
 				D2F21FBF2C9A6CBA00FD6AE8 /* ImgurImage */,
 				D2F21FBE2C9A6CBA00FD6AE8 /* Products */,
@@ -120,6 +125,7 @@
 		D2F21FBF2C9A6CBA00FD6AE8 /* ImgurImage */ = {
 			isa = PBXGroup;
 			children = (
+				D286DACD2CA2931C0021DB1C /* search.png */,
 				D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */,
 				D2F21FD72CA127B400FD6AE8 /* Model */,
 				D2F21FD82CA1280700FD6AE8 /* View */,
@@ -251,9 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D286DAD02CA2943F0021DB1C /* ImgurSearchLaunchScreen.storyboard in Resources */,
 				D286DACC2CA28C9B0021DB1C /* README.md in Resources */,
 				D2F21FC92C9A6CBC00FD6AE8 /* Preview Assets.xcassets in Resources */,
 				D2F21FC52C9A6CBC00FD6AE8 /* Assets.xcassets in Resources */,
+				D286DACE2CA2931C0021DB1C /* search.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,12 +421,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImgurImage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Imgur Search";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = ImgurSearchLaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -452,12 +462,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImgurImage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Imgur Search";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = ImgurSearchLaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
