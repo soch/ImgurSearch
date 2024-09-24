@@ -21,6 +21,7 @@ class ImageSearchViewModel: ObservableObject {
             self?.hasMoreImages = true
             self?.images = []
         }
+        await Task.yield()
         await searchImages()
     }
     
