@@ -80,4 +80,8 @@ class ImageSearchViewModel: ObservableObject {
     func setDateOption(range: DateRange) {
         selectedDateRange = range
     }
+    
+    func testData(images:[ImgurImage]) {
+        self.images = images
+    }
 }

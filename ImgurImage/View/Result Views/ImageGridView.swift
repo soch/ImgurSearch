@@ -49,3 +49,12 @@ struct ImageGridView: View {
         }
     }
 }
+
+struct ImageGridView_Previews: PreviewProvider {
+    let images = TestData.images
+    var vm = ImageSearchViewModel()
+    vm.testData(images: )
+    static var previews: some View {
+        ImageGridView().environmentObject(vm)
+    }
+}

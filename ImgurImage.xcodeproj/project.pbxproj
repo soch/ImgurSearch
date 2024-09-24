@@ -11,6 +11,8 @@
 		D21AE2042CA1317A00884D95 /* DateRangeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AE2032CA1317A00884D95 /* DateRangeMenu.swift */; };
 		D2592D062CA1457E001811DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D052CA1457E001811DC /* MenuView.swift */; };
 		D2592D082CA156DB001811DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2592D072CA156DB001811DC /* AppConstants.swift */; };
+		D286DAC82CA2841B0021DB1C /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286DAC72CA2841B0021DB1C /* TestData.swift */; };
+		D286DACA2CA284990021DB1C /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = D286DAC92CA284990021DB1C /* Response.json */; };
 		D2F21FC12C9A6CBA00FD6AE8 /* ImgurImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */; };
 		D2F21FC32C9A6CBA00FD6AE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */; };
 		D2F21FC52C9A6CBC00FD6AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F21FC42C9A6CBC00FD6AE8 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		D21AE2032CA1317A00884D95 /* DateRangeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeMenu.swift; sourceTree = "<group>"; };
 		D2592D052CA1457E001811DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D2592D072CA156DB001811DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		D286DAC72CA2841B0021DB1C /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		D286DAC92CA284990021DB1C /* Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
 		D2F21FBD2C9A6CBA00FD6AE8 /* ImgurImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F21FC02C9A6CBA00FD6AE8 /* ImgurImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurImageApp.swift; sourceTree = "<group>"; };
 		D2F21FC22C9A6CBA00FD6AE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				D2F21FC82C9A6CBC00FD6AE8 /* Preview Assets.xcassets */,
+				D286DAC72CA2841B0021DB1C /* TestData.swift */,
+				D286DAC92CA284990021DB1C /* Response.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D286DACA2CA284990021DB1C /* Response.json in Resources */,
 				D2F21FC92C9A6CBC00FD6AE8 /* Preview Assets.xcassets in Resources */,
 				D2F21FC52C9A6CBC00FD6AE8 /* Assets.xcassets in Resources */,
 			);
@@ -263,6 +270,7 @@
 				D2F21FEA2CA12CE000FD6AE8 /* NetworkService.swift in Sources */,
 				D2F21FDF2CA1288700FD6AE8 /* NoResultsView.swift in Sources */,
 				D2F21FE52CA128FD00FD6AE8 /* ImageSearchViewModel.swift in Sources */,
+				D286DAC82CA2841B0021DB1C /* TestData.swift in Sources */,
 				D2F21FDD2CA1286D00FD6AE8 /* ImageGridView.swift in Sources */,
 				D2592D082CA156DB001811DC /* AppConstants.swift in Sources */,
 				D2F21FED2CA12E8B00FD6AE8 /* SortOption.swift in Sources */,
