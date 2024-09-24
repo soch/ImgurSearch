@@ -44,6 +44,9 @@ class NetworkService: NetworkServiceProtocol {
 //            if let httpResponse = response as? HTTPURLResponse {
 //                print("✅ Response Status Code: \(httpResponse.statusCode)")
 //            }
+//            if let jsonString = String(data: data, encoding: .utf8) {
+//                print("🌐 Raw Response: \(jsonString)")
+//            }
 //            #endif
             
             let responseObject = try JSONDecoder().decode(ImgurSearchResponse.self, from: data)
