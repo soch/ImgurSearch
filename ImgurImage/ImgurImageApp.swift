@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct ImgurImageApp: App {
-    @StateObject private var viewModel =  ImageSearchViewModel()
+    @StateObject private var viewModel =  ImageSearchViewModel(networkService: NetworkService())
     var body: some Scene {
         WindowGroup {
             ContentView()

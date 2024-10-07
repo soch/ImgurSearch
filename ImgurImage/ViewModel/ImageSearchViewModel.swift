@@ -10,8 +10,11 @@ class ImageSearchViewModel: ObservableObject {
     @Published var selectedImageURL: IdentifiableImageURL?
     @Published var selectedSortOption: SortOption = .time
     @Published var selectedDateRange: DateRange = .allTime
-    private let networkService: NetworkServiceProtocol = NetworkService()
+    private let networkService: NetworkServiceProtocol 
     
+    init(networkService: NetworkServiceProtocol) {
+            self.networkService = networkService
+        }
     func performSearch() async {
         DispatchQueue.main.async { [weak self] in
             self?.currentPage = 0

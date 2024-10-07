@@ -28,7 +28,7 @@ struct ImgurImage: Codable, Identifiable, Equatable {
     // Thumbnail URL derived from the original link
     var thumbnailLink: String? {
         guard let link = link else { return nil }
-        return link.replacingOccurrences(of: ".jpg", with: "s.jpg")
+        return link.replacingOccurrences(of: ".jpg", with: "s.jpg")// Load "Small Square" version
     }
     
     static func ==(lhs: ImgurImage, rhs: ImgurImage) -> Bool {
@@ -36,7 +36,7 @@ struct ImgurImage: Codable, Identifiable, Equatable {
     }
 }
 
-struct IdentifiableImageURL: Identifiable {
+struct IdentifiableImageURL: Identifiable { //sheet(item:onDismiss:content:) expects the item to conform to Identifiable
     let id = UUID()
     let url: String
 }
