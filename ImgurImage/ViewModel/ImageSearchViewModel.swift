@@ -8,27 +8,29 @@ class ImageSearchViewModel: ObservableObject {
     @Published var currentPage = 0
     @Published var hasMoreImages = true
     @Published var selectedImageURL: IdentifiableImageURL?
+    @Published var selectedImageIndex: Int? 
     @Published var selectedSortOption: SortOption = .time
     @Published var selectedDateRange: DateRange = .allTime
     private let networkService: NetworkServiceProtocol = NetworkService()
-    
+
     func performSearch() async {
         DispatchQueue.main.async { [weak self] in
             self?.currentPage = 0
             self?.hasMoreImages = true
             self?.images = []
+            self?.selectedImageIndex = nil // Reset selected index
         }
         await Task.yield()
         await searchImages()
     }
-    
+
     func debounceSearch() async {
         try? await Task.sleep(nanoseconds: 500_000_000)
         if !Task.isCancelled {
             await performSearch()
         }
     }
-    
+
     func searchImages() async {
         isLoading = true
         do {
@@ -74,5 +76,9 @@ class ImageSearchViewModel: ObservableObject {
     
     func setDateOption(range: DateRange) {
         selectedDateRange = range
+    }
+
+    func selectImage(at index: Int) {
+        selectedImageIndex = index // Set the index of the selected image
     }
 }
