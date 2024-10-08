@@ -1,4 +1,4 @@
-# ImgurSearch (SwiftUI)
+# ImgurSearch (SwiftUI) created in couple of hours using CHATGpt (https://chatgpt.com/share/67057b59-6a30-8008-8293-0a1380a3cdf8)
  Search images on imgur
 - MVVM design pattern used
 - Kingfisher used for loading images
